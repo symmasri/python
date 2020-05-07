@@ -10,3 +10,22 @@ print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
 
 
 ##################################
+
+print('This sentence is output to the screen')
+
+
+################################
+
+Flow Control
+
+# If the number is positive, we print an appropriate message
+
+num = 3
+if num > 0:
+    print(num, "is a positive number.")
+print("This is always printed.")
+
+num = -1
+if num > 0:
+    print(num, "is a positive number.")
+print("This is also always printed.")
