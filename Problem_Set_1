@@ -1,0 +1,401 @@
+1)
+
+x = int(input("Enter x: "))
+
+y = int(input("Enter y: "))
+
+z = int(input("Enter z: "))
+
+
+
+if x > y and x > z and x % 2 != 0:
+
+    print(x)
+
+elif y > z and y % 2 != 0:
+
+    print(y)
+
+elif z % 2 != 0:
+
+    print(z)
+
+else:
+
+    print("No odd numbers")
+
+
+
+
+
+
+
+2)
+
+def right_justify(s):
+
+    print("%70s" %s)
+
+
+
+right_justify('cigna')
+
+
+
+3)
+
+a=int(input())
+
+b=int(input())
+
+c=int(input())
+
+d=int(input())
+
+e=int(input())
+
+f=int(input())
+
+g=int(input())
+
+h=int(input())
+
+i=int(input())
+
+j=int(input())
+
+
+
+
+
+largest = max(a%2*a, b%2*b, c%2*c, d%2*d, e%2*e, f%2*f, g%2*g, h%2*h, i%2*i, j%2*j) 
+
+if largest == 0:
+
+    print ('There are no odd numbers.')
+
+else:
+
+    print (largest, 'is the largest odd integer.')
+
+
+
+  
+
+4)
+
+
+
+a) The volume of a sphere with radius r is 4/3pr3. What is the volume of a sphere with radius 5?
+
+Hint: 392.7 is wrong!
+
+
+
+
+
+pi=3.14
+
+radius=float(input("Enter the radius : "))
+
+v=4/3*pi*radius*radius*radius
+
+print("The volume of the sphere is : " ,v)
+
+
+
+-------------------------
+
+
+
+b)Suppose the cover price of a book is Rs.24.95, but bookstores get a 40% discount. Shipping costs
+
+Rs.3 for the first copy and 0.75p for each additional copy. What is the total wholesale cost for
+
+60 copies?
+
+
+
+
+
+book_price=24.95
+
+discount=0.4
+
+first_copy_cost=3.0
+
+additional_copy_cost=0.75
+
+total_book=60
+
+
+
+single_book_price=book_price*discount
+
+sale_price=book_price-single_book_price
+
+
+
+first_copy=sale_price+first_copy_cost
+
+additional_copy=sale_price*59+additional_copy_cost*59
+
+
+
+print("The additional copy price is " ,additional_copy)
+
+print("The first copy price is  ",first_copy)
+
+print("The total whole sale cost is ",additional_copy+first_copy)
+
+
+
+----------------------------
+
+
+
+c)If I leave my house at 6:52 am and run 1 mile at an easy pace (8:15 per mile), then 3 miles at
+
+tempo (7:12 per mile) and 1 mile at easy pace again, what time do I get home for breakfast?
+
+
+
+starttimehr = 6 + (52 / 60.0)
+
+easypacehr = (8 + 15 / 60.0 ) / 60.0
+
+tempopacehr = (7 + 12 / 60.0) / 60.0
+
+runtimehr = 2 * easypacehr + 3 * tempopacehr
+
+breakfasthr = starttimehr + runtimehr
+
+breakfastmin = (breakfasthr-int(breakfasthr))*60
+
+breakfastsec= (breakfastmin-int(breakfastmin))*60
+
+print ('Finish time was %d:%d' % (breakfasthr,breakfastmin))
+
+
+
+
+
+
+
+5)
+
+a=int(input("Enter an integer "))
+
+root=0
+
+pwr=0
+
+
+
+
+
+while root<=a:
+
+    root+=1
+
+    while pwr<6:
+
+        pwr+=1
+
+        if root**pwr==a:
+
+            print(root,pwr)
+
+
+
+    pwr=0
+
+
+
+
+
+
+
+6)
+
+str1=float(input("Enter a string separated by comas : "))
+
+for i in str1.split(","):
+
+    print(sum(nums))
+
+
+
+7)
+
+x=str(input("Enter the string "))
+
+y=str(input("Enter the string "))
+
+
+
+
+
+def isIn(x,y):
+
+    if x in y:
+
+        print("True")
+
+
+
+    elif y in x:
+
+        print("True")
+
+    else:
+
+       print("False")
+
+
+
+isIn(x,y)
+
+
+
+8)
+
+def getRatios(vect1, vect2):
+
+  def getRatios(vect1,vect2):
+
+    ratio=[]
+
+    for i in range(0,len(vect1)):
+
+        try:
+
+            ratio.append(vect1[i]/(vect2[i]))
+
+        except :
+
+            ratio.append("invalid")
+
+    return ratio
+
+ratio1=[4,4,6]
+
+ratio2=[2,2,2]
+
+res=getRatios(ratio1,ratio2)
+
+print(res)
+
+
+
+
+
+9)
+
+width=17
+
+height=12.0
+
+delimiter='.'
+
+w=width/2
+
+h=height/3
+
+d=delimiter*5
+
+print("The value of w is ",w)
+
+print("The value of h is ",h)
+
+print("The value of d is ",d)
+
+print(type(w))
+
+print(type(h))
+
+print(type(d))
+
+
+
+
+
+10)Observe the Code Snippet
+
+
+
+x = 25
+
+epsilon = 0.01
+
+numGuesses = 0
+
+low = 0.0
+
+high = max(1.0, x)
+
+ans = (high + low)/2.0
+
+while abs(ans**2 - x) >= epsilon:
+
+print 'low =', low, 'high =', high, 'ans =', ans
+
+numGuesses += 1
+
+if ans**2 < x:
+
+low = ans
+
+else:
+
+high = ans
+
+ans = (high + low)/2.0
+
+print 'numGuesses =', numGuesses
+
+print ans, 'is close to square root of', x
+
+
+
+
+
+
+
+a. What would the code above return if the statement x = 25 were replaced by x = -25?
+
+
+
+
+
+x = -25
+
+epsilon = 0.01
+
+numGuesses = 0
+
+low = 0.0
+
+high = max(1.0, x)
+
+ans = (high + low)/2.0
+
+while abs(ans**2 - x) >= epsilon:
+
+    print('low =', low, 'high =', high, 'ans =', ans)
+
+    numGuesses += 1
+
+    if ans**2 < x:
+
+        low = ans
+
+    else:
+
+        high = ans
+
+        ans = (high + low)/2.0
+
+print('numGuesses =', numGuesses)
+
+print (ans, 'is close to square root of', x)
