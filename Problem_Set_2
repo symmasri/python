@@ -1,0 +1,343 @@
+1)
+
+
+
+def gcd(a,b):
+
+    if b==0:
+
+        return a
+
+    else:
+
+        return gcd(b, a%b)
+
+
+
+"""a=int(input("Enter the 1st value : "))
+
+b=int(input("Enter the 2nd value : "))
+
+print(gcd(a,b))"""
+
+
+
+
+
+print(gcd(int(input("Enter the 1st value : ")),int(input("Enter the 2nd value : "))))
+
+
+
+
+
+2)
+
+def is_power(a,b):
+
+
+
+    if a % b == 0:                          
+
+        for i in range(1,a):                 
+
+            if b ** i == a:                   
+
+                return True
+
+    else:
+
+        return False
+
+
+
+
+
+result = is_power(int(input()),int(input()))
+
+print(result)
+
+
+
+
+
+3)
+
+def factI(n):
+
+	"""Assumes that n is an int > 0
+
+	Returns n!
+
+	Uses Iterative Implementation"""
+
+	
+
+def factR(n):
+
+	"""Assumes that n is an int > 0
+
+	Returns n!
+
+	Uses Recursive Implementation"""
+
+
+
+
+
+
+
+def factR(a):
+
+    if a==0:
+
+        return 1
+
+    else:
+
+        return a*factR(a-1)
+
+
+
+print(factR(4))
+
+
+
+---------------------------------------------or----------------------------
+
+
+
+
+
+def factI(a):
+
+    if a==0:
+
+        return 1
+
+    temp=a
+
+    for i in range(1,a):
+
+        if a>0:
+
+            temp=temp*(a-1)
+
+            a=a-1
+
+    return temp
+
+print(factI(4))
+
+
+
+
+
+4)
+
+def binary2decimal(binary):
+
+    decimal = 0
+
+    i = 0
+
+    while binary != 0:
+
+        dec = binary % 10
+
+        decimal = decimal + dec * pow(2, i)
+
+        binary = binary // 10
+
+        i += 1
+
+    return decimal
+
+
+
+
+
+result = binary2decimal(10011)
+
+print(result)
+
+
+
+
+
+5)
+
+  def sumOfDigits(s):
+
+    list1 = []
+
+    try:
+
+        for i in s:
+
+            if i.isdigit():
+
+                list1.append(int(i))
+
+        print(sum(list1))
+
+
+
+    except ValueError as ve:
+
+        print("Invalid ")
+
+
+
+s='a2b3c'
+
+sumOfDigits(s)
+
+
+
+
+
+
+
+
+
+6)
+
+def findAnEven(list1):
+
+    try:
+
+        for i in list1:
+
+            if i%2==0:
+
+                print("The even numbers are ",i)
+
+                exit()
+
+        raise ValueError
+
+
+
+    except ValueError as ve:
+
+        print("Enter atleast one even ")
+
+
+
+list1=[1,3,5,9]
+
+findAnEven(list1)
+
+
+
+
+
+
+
+7)
+
+def isPalindrome(s):
+
+    s1=s[::-1]
+
+    if s==s1:
+
+        print(s)
+
+    else:
+
+        print("not a palandrome")
+
+
+
+
+
+s=str(input("Enter the string "))
+
+isPalindrome(s)
+
+
+
+
+
+
+
+------------------------------------or--------------------------------
+
+
+
+
+
+
+
+def is_palindrome(s):
+
+    if len(s)==1:
+
+        print("palindrome")
+
+    elif len(s) > 1:
+
+        if s[0]==s[-1]:
+
+            print('palindrome')
+
+    else:
+
+        print('not a palindrome')
+
+s = input("enter the string: ")
+
+is_palindrome(s)
+
+
+
+
+
+
+
+8)
+
+def eval_loop():
+
+    while True:
+
+        n = input("Enter a string:")
+
+        if n == 'done':
+
+            break
+
+        else:
+
+            result = eval(n)
+
+            print(result)
+
+    print(result)
+
+
+
+eval_loop()
+
+
+
+
+
+9)
+
+def newtonsqrt(a,x):
+
+    y=(x+a/x)/2
+
+    return y
+
+
+
+a = int(input("Enter a number:"))
+
+x = int(input("Enter another number:"))
+
+res = newtonsqrt(a,x)
+
+print(res)
