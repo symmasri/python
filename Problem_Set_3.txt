@@ -1,0 +1,238 @@
+1)A string slice can take a third index that specifies the "step size;" that is, the number of spaces between successive characters. A step size of 2 means every other character; 3 means every third, etc.
+>>> fruit = 'banana'
+>>> fruit[0:5:2]
+'bnn'
+
+def isPal(a):
+    b=a[::-1]
+    print(b)
+    if a==b:
+     return "Its a palindrome
+    else:
+        return "Its not a palindrome"
+
+a=str(input("Enter the string : "))
+print(isPal(a))
+
+
+2)Write a function called rotate_word() that takes a string and an integer as parameters, and that returns a new string that contains 
+the letters from the original string "rotated" by the given amount. For example, "cheer" rotated by 7 is "jolly" and "melon" rotated 
+by -10 is "cubed". You might want to use the built-in functions ord, which converts a character to a numeric code, and chr, 
+which converts numeric codes to characters.
+
+
+
+
+3)In 1939 Ernest Vincent Wright published a 50,000 word novel called Gadsby that does not contain the letter "e." 
+Since "e" is the most common letter in English, that’s not easy to do. In fact, it is difficult to construct a solitary thought 
+without using that most common symbol. It is slow going at first, but with caution and hours of training you can gradually gain facility.
+All right, I’ll stop now. Write a function called has_no_e that returns True if the given word doesn’t have the letter "e" in it.
+
+
+def  has_no_e(a):
+    if 'e'  in a:
+        return True
+    else:
+        return False
+
+a='eagle'
+res=has_no_e(a)
+print(res)
+
+-------------------------------or---------------------
+
+li=[]
+def  has_no_e(a):
+    for i in a:
+        if 'e'  in a:
+            return True
+        else:
+            return False
+
+a='eagle'
+res=has_no_e(a)
+print(res)
+
+
+4)Modify the above program to print only the words that have no “e” and compute the percentage of the words in the list have no “e.”
+
+def  has_no_e(a):
+    word=a.split(" ")
+    li = []
+    for a in word:
+        if 'e' not  in word:
+            li.append(word)
+    percentage = 100*(len(li)/100)
+    print(percentage)
+a='Hello this is abi working on python programee'
+res=has_no_e(a)
+print(res)
+
+
+5)Write a function named avoids that takes a word and a string of forbidden letters, and that returns True if the word doesn’t 
+use any of the forbidden letters.
+
+def fun(a,b):
+    for a  in b:
+        if b not in a:
+            return False
+        else:
+            return True
+
+a=input("Enter a word : ")
+b=input("Enter a string : ")
+res=fun(a,b)
+print(res)
+
+
+6)Modify your program to prompt the user to enter a string of forbidden letters and then print the number of words that don’t 
+contain any of them. Can you find a combination of 5 forbidden letters that excludes the smallest number of words?
+
+def avoids():
+    string=input("Enter a string of forbidden letters: ")
+    string1=string[:5]
+    print(string1)
+    line_list=open("words.txt")
+    mylist=[]
+    count=0
+    flag = True
+    for line in line_list:
+        sentence=line.strip()
+        list1=sentence.split(" ")
+        for i in list1:
+            if string1 in i:
+                print(i)
+        for i in list1:
+            for j in i:
+                if j not in string:
+                    flag=True
+                    continue
+                else:
+                    flag=False
+                    break
+            if flag==True:
+                mylist.append(i)
+                count+=1
+    print(mylist)
+    print(count)
+avoids()
+Output:
+Enter a string of forbidden letters: situate
+situa
+situation,
+['by', 'of', 'for', 'of', 'on', 'of', 'of', 'of', 'for', 'So,', 'of', 'of', 'of', '"O', 'of', 'I', 'If', 'do', 'I', 'of', 'of', '"O', 'of', 'no', 'from', 'I', 'from', 'worry', 'by', 'of', 'of', 'for', 'of', 'of', 'by', 'of', 'from', 'of', 'of', 'of', 'who', 'of', 'of', 'for', 'on', 'of', 'of', 'of', '"Now', 'for', 'of', 'go', 'And', 'All', 'on', 'from', 'of', 'of', 'for']
+59
+
+
+
+7)Write a function named using_only() that takes a word and a string of letters, and that returns True if the word contains only 
+letters in the list. Can you make a sentence using only the letters acefhlo? Other than "Hoe alfalfa?"
+
+def using_only(word,string):
+    for word in string:
+        if word in string:
+            return True
+        else:
+            return False
+
+
+word=input("Enter the word ")
+string=input("Eneter the string ")
+print(using_only(word,string))
+
+
+8)Write a function called is_abecedarian that returns True if the letters in a word appear in alphabetical order (double letters are ok).
+How many abecedarian words are there? (i.e) "Abhor" or "Aux" or "Aadil" should return "True" Banana should return "False"
+
+
+def is_abecedarian():
+    word=input("Enter a word:")
+    word_sort=sorted(word)
+    after_sort="".join(word_sort)
+    if word==after_sort:
+        return True
+    else:
+        return False
+
+
+print(is_abecedarian())
+
+def is_abecedarian():
+    word=input("Enter a word:")
+    flag=True
+    for i in range(len(word)):
+        for j in range(i+1,len(word)):
+            if word[i]<=word[j]:
+                continue
+            else:
+                flag=False
+                break
+
+    if flag:
+        return True
+    else:
+        return False
+
+print(is_abecedarian())
+
+Output:
+
+Enter a word:aadil
+True
+Enter a word:banana
+False
+
+
+9.Write a function called is_sorted that takes a list as a parameter and returns True if the list is sorted in ascending order and False otherwise. You can assume (as a precondition) that the elements of the list can be compared with the relational operators <, >, etc. For example, is_sorted([1,2,2]) should return True and is_sorted(['b','a']) should return False.
+
+
+def is_sorted(mylist):
+   list1=mylist.copy()
+   list1.sort()
+   if mylist==list1:
+       return True
+   else:
+       return False
+
+print(is_sorted(['b','a']))
+print(is_sorted([1,1,2]))
+
+def is_sorted(mylist):
+    flag=True
+    for i in range(len(mylist)):
+        for j in range(i+1,len(mylist)):
+            if mylist[i]<=mylist[j]:
+                continue
+            else:
+                flag=False
+                break
+    if flag:
+        return True
+    else:
+        return False
+    
+print(is_sorted(['b','a']))
+print(is_sorted([1,1,2]))
+
+Output:
+
+False
+True
+False
+True
+
+10.Two words are anagrams if you can rearrange the letters from one to spell the other. Write a function called is_anagram that takes two strings and returns True if they are anagrams.
+
+def is_anagram(a,b):
+    sort1=sorted(a)
+    sort2=sorted(b)
+    if sort1==sort2:
+        return True
+    else:
+        return False
+
+print(is_anagram("add","dad"))
+
+Output:
+
+True
