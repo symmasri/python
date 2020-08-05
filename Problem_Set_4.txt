@@ -1,20 +1,161 @@
-1)Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. 
-Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+#### AREA OF SQUARE #####
+
+"""1.Define a class named Shape and its subclass Square. The Square class has an init function which
+takes a length as argument. Both classes have a area function which can print the area of the shape
+where Shape's area is 0 by default.
+"""
 
 
 class Shape:
-    area=0
+
     def __init__(self):
-         self.length=length
-        
+        pass
+
+    def area(self):
+        self.a = 0
+
+
 class Square(Shape):
-    def __init__(self,length):
+    def __init__(self, length):
         self.length = length
 
     def area(self):
-        a = (self.length * self.length)
-        print('The area of a square with a side length of %f is %f' % (self.length, a))
+        print(self.length ** 2)
 
 
-s = Square(2)
-s.area()
+square = Square(5)
+square.area()
+
+
+##### Co ordinates #####
+
+"""5.Your need to define the following two methods for the Coordinate class:
+a) Add an eq method that returns True if coordinates refer to same point in the plane (i.e., have the same x and y coordinate).
+b) Define repr, a special method that returns a string that looks like a valid Python expression that could be used to
+ recreate an object with the same value. In other words, eval(repr(c)) == c given the definition of eq from part 1.
+"""
+
+
+class Coordinate(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def __str__(self):
+        return '<' + str(self.getX()) + ',' + str(self.getY()) + '>'
+
+    def __eq__(self, a, b):
+        return a == b
+        
+        
+######### Gender #########
+
+"""2.Define a class Person and its two child classes: Male and Female.
+ All classes have a method "getGender" which can print "Male" for Male class and "Female" for Female class.
+"""
+
+class Person:
+    def getGender(self):
+        print('unknown')
+
+class Male(Person):
+
+    def getGender(self):
+        print('Male')
+
+class Female(Person):
+    def getGender(self):
+        print('Female')
+
+m = Male()
+m.getGender()
+f = Female()
+f.getGender()
+© 2020 GitHub, Inc.
+
+    def __repr__(self):
+        return "'self.getX()== self.getY() '"
+
+
+a = int(input("enter x coordinate:"))
+b = int(input("enter y coordinate:"))
+obj = Coordinate(a, b)
+print(obj.__str__())
+print(a == b)
+print(eval(repr(obj)))
+
+
+
+####### PATTERNS RECURSIVE / NON RECURSIVE ########
+
+"""4.Write both a nonrecursive and recursive function that displays the rows of asterisks given below,
+"""
+
+# ---Non Recursive---
+
+def non_recursive(n):
+    k = n - 1
+    for i in range(0, n):
+
+        for j in range(0, k):
+            print(' ', end='')
+
+        k = k - 1
+
+        for j in range(0, i + 1):
+            print('*', end='')
+        for j in range(0, i):
+            print('*', end='')
+
+        print()
+
+# ---Recursive---
+
+def recursive(n, k):
+    if k == 0:
+        return;
+    for i in range(0, k - 1):
+        print(' ', end='')
+    for i in range(k - 1, n):
+        print('*', end='')
+    m = n - k
+    for i in range(n, n + m):
+        print('*', end='')
+    print()
+    recursive(n, k - 1)
+
+
+n = 5
+recursive(n, n)
+non_recursive(n)
+
+
+
+########## CURRENCT CONVERTER ##################
+
+"""3.Design and implement a Money class that stores monetary values in dollars and cents.
+Special method init should have the following function header, def init(self, dollars, cents)
+Include special method repr (str) for displaying values in dollars and cents: $ 0.45, $ 1.00, $ 1.25.
+Also include special method add, and three getter methods that each provide the monetary value in another
+currency. Choose any three currencies to convert to.
+"""
+
+
+class Money:
+    cent = 1
+    dollar = cent * 100
+
+    def init(self, dollar, cent):
+        self.cent = cent
+        self.dollar = dollar
+
+    def __repr__(self):
+        print(self.dollar)
+        print(self.cent)
